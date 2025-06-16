@@ -18,7 +18,7 @@ MedBot leverages deep learning to classify MRI images of the lumbar spine and ge
 # 📁 Dataset
 
 **RSNA 2024 - Lumbar Spine MRI**  
-Source: [Kaggle RSNA Competition](https://www.kaggle.com/)  
+Source: [Kaggle RSNA Competition](https://www.kaggle.com/c/rsna-2024-lumbar-spine-degenerative-classification)  
 - Modality: DICOM (converted to JPG/PNG for web)
 - Classes:
   - Normal

@@ -1,0 +1,14 @@
+pillow
+python-multipart
+openai
+python-dotenv
+reportlab
+streamlit
+python-jose 
+passlib 
+sqlalchemy
+pydantic-settings
+bcrypt
+jax==0.4.17
+jaxlib==0.4.17
+ml_dtypes==0.4.0

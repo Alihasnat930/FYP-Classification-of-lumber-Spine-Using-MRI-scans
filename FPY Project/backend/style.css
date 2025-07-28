@@ -1,0 +1,162 @@
+:root {
+    --primary-color: #1976D2;
+    --secondary-color: #43A047;
+    --accent-color: #FFB300;
+    --dark-bg: #16374D;
+    --darker-bg: #0E2534;
+    --report-bg: rgba(18, 46, 52, 0.55);
+    --alert-bg: rgba(31, 78, 95, 0.7);
+    --text-light: #FFFFFF;
+    --text-dark: #222831;
+    --border-radius: 18px;
+    --box-shadow: 0 8px 32px rgba(25, 118, 210, 0.14);
+    --glass-blur: blur(18px);
+}
+
+/* Gradient background */
+body, .stApp {
+    color: var(--text-light);
+    background: linear-gradient(120deg, #16374D 0%, #1976D2 100%);
+    font-family: 'Montserrat', 'Roboto Slab', 'Segoe UI', Arial, sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+    letter-spacing: 0.5px;
+}
+
+/* Glassmorphism for cards */
+.report-box, .stAlert, [data-testid="stMetric"], .stExpander {
+    background: var(--report-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    backdrop-filter: var(--glass-blur);
+    border: 1.5px solid rgba(255,255,255,0.18);
+    transition: box-shadow 0.3s, transform 0.3s;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.report-box:hover, [data-testid="stMetric"]:hover, .stExpander:hover {
+    box-shadow: 0 12px 32px rgba(25, 118, 210, 0.22);
+    transform: translateY(-6px) scale(1.025);
+    border-color: var(--accent-color);
+}
+
+/* Typography */
+.main-header {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 1.7rem;
+    margin-top: 0.7rem;
+    color: var(--text-light);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2.5px;
+    text-shadow: 0 2px 12px rgba(25, 118, 210, 0.22);
+}
+
+.sub-header {
+    font-size: 1.7rem;
+    margin-bottom: 1.1rem;
+    color: var(--accent-color);
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 1.2px;
+}
+
+.dashboard-white-text,
+.stMarkdownContainer, .stMarkdown, .stText, .stCaption, .stSubheader,
+h1, h2, h3, h4, h5, h6, p {
+    color: var(--text-light) !important;
+    font-family: 'Roboto Slab', serif;
+}
+
+/* Buttons */
+button, .stButton>button, .stDownloadButton>button {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light) !important;
+    border-radius: var(--border-radius) !important;
+    border: none !important;
+    padding: 0.8rem 1.8rem !important;
+    font-size: 1.13rem !important;
+    font-weight: bold !important;
+    transition: all 0.22s cubic-bezier(.4,0,.2,1);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 10px rgba(25, 118, 210, 0.13);
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover, .stButton>button:hover, .stDownloadButton>button:hover {
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 20px rgba(25, 118, 210, 0.22);
+    filter: brightness(1.08);
+}
+
+/* Sidebar */
+.stSidebar, .stSidebarContent {
+    background: rgba(14, 37, 52, 0.92) !important;
+    color: var(--text-light);
+    padding: 2.2rem 1.4rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 14px rgba(25, 118, 210, 0.13);
+    backdrop-filter: var(--glass-blur);
+}
+
+/* Inputs */
+input, textarea, .stTextInput input, .stTextArea textarea {
+    background: rgba(255,255,255,0.92) !important;
+    color: var(--text-dark) !important;
+    border-radius: var(--border-radius);
+    border: 1.7px solid var(--primary-color);
+    padding: 0.7rem 1.2rem !important;
+    transition: border 0.22s;
+    font-size: 1.05rem;
+}
+
+input:focus, textarea:focus, .stTextInput input:focus, .stTextArea textarea:focus {
+    border: 1.7px solid var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent-color, #FFB30033);
+}
+
+/* Data display */
+.stDataFrame, .stTable {
+    background: rgba(255,255,255,0.97);
+    border-radius: var(--border-radius);
+    color: var(--text-dark) !important;
+    padding: 1.3rem;
+    border: 1.2px solid var(--primary-color);
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(25, 118, 210, 0.10);
+    overflow-x: auto;
+    font-size: 1.05rem;
+}
+
+.stDataFrame tr:hover, .stTable tr:hover {
+    background: rgba(25, 118, 210, 0.07);
+    transition: background 0.18s;
+}
+
+/* Utility classes and responsive remain unchanged */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-header {
+        font-size: 2.1rem;
+    }
+    .sub-header {
+        font-size: 1.3rem;
+    }
+    .flex-row {
+        flex-direction: column;
+    }
+    .stSidebar {
+        padding: 1.1rem 0.6rem;
+    }
+}

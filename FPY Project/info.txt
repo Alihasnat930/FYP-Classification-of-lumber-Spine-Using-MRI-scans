@@ -1,0 +1,1 @@
+MVCNN Mobilvenetv2 no augmentation no early stopping label smoothing 400k data last 65 layers are trainable no early stopping no reduce learning rate on platue 80/20 split(train/val) ( 95.65% Train Accuracy,  76.10% Validation Accuracy)
